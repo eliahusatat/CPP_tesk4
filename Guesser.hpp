@@ -1,17 +1,19 @@
-# pragma once 
+#pragma once
 #include <iostream>
-#include <sstream>
-#include <stdexcept>
 
+using std::string;
 
 namespace bullpgia
 {
-using namespace std;
-
-
 class Guesser
-  {
+{
 
+  string guessOption;
 
-  };
+public:
+  uint length;
+  virtual string guess() = 0;
+  virtual void startNewGame(uint length){};
+  virtual void learn(string replay){};
 };
+} // namespace bullpgia

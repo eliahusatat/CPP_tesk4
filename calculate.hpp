@@ -1,18 +1,8 @@
-# pragma once 
+#pragma once 
 #include <iostream>
-#include <sstream>
-#include <stdexcept>
-
+using std::string;
 
 namespace bullpgia
 {
-using namespace std;
-
-
-class calculate
-  {
-
-
-
-  };
-};
+  string calculateBullAndPgia(string choice , string guess);
+}

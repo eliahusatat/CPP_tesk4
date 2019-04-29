@@ -1,8 +1,12 @@
 #include <iostream>
-#include <sstream>
-#include <string>
-#include <iomanip>
-#include "Guesser"
-#include <exception>
+#include "Guesser.hpp"
 
-using namespace bullpgia;
+using std::string ;
+
+namespace bullpgia
+{
+  class Guesser
+  {
+     void learn(string replay) {}
+  };
+} // namespace bullpgia;

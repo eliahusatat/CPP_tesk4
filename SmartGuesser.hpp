@@ -1,19 +1,19 @@
 # pragma once 
 
-#include <iostream>
+#include "Guesser.hpp"
 
-#include <sstream>
-#include <stdexcept>
 
 
 namespace bullpgia
 {
-using namespace std;
 
 
-class SmartGuesser
+class SmartGuesser: public bullpgia::Guesser
   {
-
+    string Guess ; 
+    public: 
+    SmartGuesser(){}
+    string guess() override ;
 
   };
 };

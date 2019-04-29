@@ -1,19 +1,15 @@
 # pragma once 
 
 #include <iostream>
+#include <stdlib.h>
 
-#include <sstream>
-#include <stdexcept>
-
+using  std::string;
 
 namespace bullpgia
 {
-using namespace std;
-
-
 class Chooser
   {
-
-
+    public:
+    virtual string choose(uint length){return "";};
   };
 };

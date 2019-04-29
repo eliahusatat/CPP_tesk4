@@ -1,10 +1,3 @@
+#include "SmartGuesser.hpp"
 
-
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <iomanip>
-#include "SmartGuesser.h"
-#include <exception>
-
-using namespace bullpgia;
+std::string bullpgia::SmartGuesser::guess(){return "";}

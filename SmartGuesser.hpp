@@ -1,6 +1,7 @@
 # pragma once 
 
 #include "Guesser.hpp"
+#include "calculate.hpp"
 
 
 

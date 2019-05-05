@@ -41,6 +41,7 @@ string bullpgia::calculateBullAndPgia(string choise, string guess)
          }
    }
 
+  
 
    
    return std::to_string(countBull) + "," + std::to_string(countPgia); 

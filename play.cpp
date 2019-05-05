@@ -21,7 +21,9 @@ namespace bullpgia {
 		guesser.startNewGame(length);  // tell the guesser that a new game starts now
 		uint indexOfTurn;
 		for (indexOfTurn=0; indexOfTurn<maxTurns; ++indexOfTurn) {
+			std::cout << "numOfA << " <<guesser.numberOfAttempts << " index :" << guesser.index << std::endl;
 			string guess = guesser.guess();
+			std::cout << "guess : "  << guess << "choies : " << choice << std::endl ;  
 			if (guess.length()!=length)  // Illegal guess
 				return TECHNICAL_VICTORY_TO_CHOOSER;
 			if (guess==choice) {

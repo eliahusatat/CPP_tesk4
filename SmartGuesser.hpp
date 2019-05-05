@@ -8,19 +8,15 @@ namespace bullpgia
 
 class SmartGuesser : public bullpgia::Guesser
 {
-  string Guess;
+private:
+  int bullCounter;
+  int index = 0;
+  int numberOfAttemps = 0 ; 
 
 public:
+  
   SmartGuesser() {}
   string guess() override;
-  void init()
-  {
-    int numberOfAttempts = 0;
-    string lastGuess = "";
-    uint lastBullCounter = 0;
-    int index = 0;
-    string currentGuess = "";
-    this->bull = 0;
-  }
+  void startNewGame(uint length) override;
 };
 }; // namespace bullpgia

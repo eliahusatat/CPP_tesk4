@@ -11,20 +11,24 @@ class Guesser
 protected:
   uint bull;
   uint pgia;
+  
 
 public:
   uint length;
+  string Guess ; 
 
-  int numberOfAttempts = 0;
-  string lastGuess = "";
-  uint lastBullCounter = 0;
-  int index = 0;
-  string currentGuess = "";
+
+
+
   virtual string guess() = 0;
   virtual void startNewGame(uint length)
   { 
     this->length = length; 
-  };
-  virtual void learn(string replay);
+  }
+  virtual void learn(string replay)
+  {
+    bull = std::stoi(replay.substr(0, replay.find(',')));
+    pgia = std::stoi(replay.substr(replay.find(',') + 1, replay.length() - replay.find(',') - 1));
+  }
 };
 } // namespace bullpgia

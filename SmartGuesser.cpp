@@ -4,56 +4,54 @@ using std::string;
 
 std::string bullpgia::SmartGuesser::guess()
 {
-    std::cout << bull << " << " << std::endl ;
-     /* init the string*/
-    if (this->numberOfAttempts == 0)
+    if (numberOfAttemps == 0)
     {
-        for (int i = 0; i < length; i++)
-            this->lastGuess += '0';
-
-        this->numberOfAttempts++;
-        this->currentGuess = this->lastGuess;
-        return this->lastGuess;
+        numberOfAttemps++;
+        return Guess;
     }
-
-    else if (this->numberOfAttempts == 1)
+    else if (numberOfAttemps == 1)
     {
-        this->lastBullCounter = this->bull;
-        this->numberOfAttempts++;
-        this->currentGuess.at(0) = '1';
-        return this->currentGuess;
+        bullCounter = bull;
+        numberOfAttemps++;
+        Guess.at(index)++;
+        return Guess;
     }
     else
     {
-
-        if (this->lastBullCounter > this->bull)
+        if (bull > bullCounter)
         {
-            this->lastBullCounter = this->bull;
-            this->numberOfAttempts++;
-            this->currentGuess.at(index)--;
-            this->index++;
-            return this->currentGuess;
+            bullCounter = bull;
+            numberOfAttemps++;
+            index++;
+            Guess.at(index)++;
+            return Guess;
         }
-        else if (this->lastBullCounter == this->bull)
+        else if (bull < bullCounter)
         {
-            this->numberOfAttempts++;
-            this->currentGuess.at(index)++;
-            return this->currentGuess;
+            numberOfAttemps++;
+            Guess.at(index)--;
+            index++;
+            Guess.at(index)++;
+            return Guess;
         }
-        else
+        else // ==
         {
-            this->numberOfAttempts++;
-            this->lastBullCounter = this->bull;
-            this->index++;
-            return this->currentGuess;
+            numberOfAttemps++;
+            Guess.at(index)++;
+            return Guess;
         }
     }
-
-    return "1234";
 }
 
-void bullpgia::Guesser::learn(std::string reaply)
+
+void bullpgia::SmartGuesser::startNewGame(uint length)
 {
-    bull = std::stoi(reaply.substr(0, reaply.find(',')));
-    pgia = std::stoi(reaply.substr(reaply.find(',') + 1, reaply.length() - reaply.find(',') - 1));
+    index = 0;
+    bullCounter = 0;
+    numberOfAttemps = 0;
+    Guess = "";
+    for (int i = 0; i < length; i++)
+    {
+        Guess += '0';
+    }
 }
